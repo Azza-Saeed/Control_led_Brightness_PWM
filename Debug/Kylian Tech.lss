@@ -1,0 +1,725 @@
+
+Kylian Tech.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000006c  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  00000354  2**0
+                  ALLOC, LOAD, DATA
+  2 .comment      0000002f  00000000  00000000  00000354  2**0
+                  CONTENTS, READONLY
+  3 .stack.descriptors.hdr 0000002a  00000000  00000000  00000383  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000120  00000000  00000000  000003ad  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00001acc  00000000  00000000  000004cd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000878  00000000  00000000  00001f99  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000009b6  00000000  00000000  00002811  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000244  00000000  00000000  000031c8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000292  00000000  00000000  0000340c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000067c  00000000  00000000  0000369e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 000000d0  00000000  00000000  00003d1a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .text         00000004  000002ce  000002ce  00000342  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 13 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00003dec  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .text.APP_Init 0000001e  00000258  00000258  000002cc  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 15 .text.Set_Duty 00000012  000002a4  000002a4  00000318  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 16 .text.Main_Task 00000018  00000276  00000276  000002ea  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 17 .text.APP_main 00000004  000002d2  000002d2  00000346  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 18 .text.BLUE_LED_Initializ 0000000e  000002b6  000002b6  0000032a  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 19 .text.main    0000000a  000002c4  000002c4  00000338  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 20 .text.DIO_SetPin_Direction 000000fe  0000006c  0000006c  000000e0  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 21 .text.timer0_overflow_init_interrupt 0000002e  000001da  000001da  0000024e  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 22 .text.timer_CTC_init_interrupt 0000003c  0000016a  0000016a  000001de  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 23 .text.timer_wave_fastPWM 00000034  000001a6  000001a6  0000021a  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 24 .text.libgcc.div 00000028  00000208  00000208  0000027c  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 25 .text.libgcc.div 00000028  00000230  00000230  000002a4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 26 .text.__dummy_fini 00000002  000002da  000002da  0000034e  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 27 .text.__dummy_funcs_on_exit 00000002  000002dc  000002dc  00000350  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 28 .text.__dummy_simulator_exit 00000002  000002de  000002de  00000352  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 29 .text.exit    00000016  0000028e  0000028e  00000302  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 30 .text._Exit   00000004  000002d6  000002d6  0000034a  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+   8:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+   c:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+  10:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+  14:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+  18:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+  1c:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+  20:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+  24:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+  28:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+  2c:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+  30:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+  34:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+  38:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+  3c:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+  40:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+  44:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+  48:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+  4c:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+  50:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+  60:	0e 94 62 01 	call	0x2c4	; 0x2c4 <main>
+  64:	0c 94 47 01 	jmp	0x28e	; 0x28e <exit>
+
+00000068 <_exit>:
+  68:	f8 94       	cli
+
+0000006a <__stop_program>:
+  6a:	ff cf       	rjmp	.-2      	; 0x6a <__stop_program>
+
+Disassembly of section .text:
+
+000002ce <__bad_interrupt>:
+ 2ce:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
+
+Disassembly of section .text.APP_Init:
+
+00000258 <APP_Init>:
+#include "BLUE_LED_Private.h"
+
+
+State_Error APP_Init(void){
+	State_Error Local_Error=State_SUCCESS;
+	DIO_SetPin_Direction(DIO_PORTA,4,1);
+ 258:	41 e0       	ldi	r20, 0x01	; 1
+ 25a:	64 e0       	ldi	r22, 0x04	; 4
+ 25c:	80 e0       	ldi	r24, 0x00	; 0
+ 25e:	0e 94 36 00 	call	0x6c	; 0x6c <__data_load_end>
+	BLUE_LED_Initializ();
+ 262:	0e 94 5b 01 	call	0x2b6	; 0x2b6 <BLUE_LED_Initializ>
+	timer0_overflow_init_interrupt();
+ 266:	0e 94 ed 00 	call	0x1da	; 0x1da <timer0_overflow_init_interrupt>
+	timer_CTC_init_interrupt();
+ 26a:	0e 94 b5 00 	call	0x16a	; 0x16a <timer_CTC_init_interrupt>
+	timer_wave_fastPWM();
+ 26e:	0e 94 d3 00 	call	0x1a6	; 0x1a6 <timer_wave_fastPWM>
+	//Set_Global_INT(ON);
+    return Local_Error;
+}
+ 272:	81 e0       	ldi	r24, 0x01	; 1
+ 274:	08 95       	ret
+
+Disassembly of section .text.Set_Duty:
+
+000002a4 <Set_Duty>:
+}
+
+State_Error Set_Duty(unsigned char duty_Cycle)
+{
+	State_Error Local_Error=State_SUCCESS;
+	OCR0=(duty_Cycle * Total_Time) / DIVISION_FAC;
+ 2a4:	98 2f       	mov	r25, r24
+ 2a6:	80 e0       	ldi	r24, 0x00	; 0
+ 2a8:	64 e6       	ldi	r22, 0x64	; 100
+ 2aa:	70 e0       	ldi	r23, 0x00	; 0
+ 2ac:	0e 94 04 01 	call	0x208	; 0x208 <__divmodhi4>
+ 2b0:	6c bf       	out	0x3c, r22	; 60
+    return Local_Error;
+}
+ 2b2:	81 e0       	ldi	r24, 0x01	; 1
+ 2b4:	08 95       	ret
+
+Disassembly of section .text.Main_Task:
+
+00000276 <Main_Task>:
+State_Error Main_Task(void){
+	State_Error Local_Error=State_SUCCESS;
+	UINT8_t counter1=0;
+	UINT8_t counter=0;
+	
+	for(counter=100;counter>=0;counter--)
+ 276:	c4 e6       	ldi	r28, 0x64	; 100
+	{
+		Set_Duty(counter);
+ 278:	8c 2f       	mov	r24, r28
+ 27a:	0e 94 52 01 	call	0x2a4	; 0x2a4 <Set_Duty>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 27e:	8f e3       	ldi	r24, 0x3F	; 63
+ 280:	9c e9       	ldi	r25, 0x9C	; 156
+ 282:	01 97       	sbiw	r24, 0x01	; 1
+ 284:	f1 f7       	brne	.-4      	; 0x282 <Main_Task+0xc>
+ 286:	00 c0       	rjmp	.+0      	; 0x288 <Main_Task+0x12>
+ 288:	00 00       	nop
+State_Error Main_Task(void){
+	State_Error Local_Error=State_SUCCESS;
+	UINT8_t counter1=0;
+	UINT8_t counter=0;
+	
+	for(counter=100;counter>=0;counter--)
+ 28a:	c1 50       	subi	r28, 0x01	; 1
+ 28c:	f5 cf       	rjmp	.-22     	; 0x278 <Main_Task+0x2>
+
+Disassembly of section .text.APP_main:
+
+000002d2 <APP_main>:
+	//Set_Global_INT(ON);
+    return Local_Error;
+}
+State_Error APP_main(void){
+	State_Error Local_Error=State_SUCCESS;
+	Main_Task();
+ 2d2:	0e 94 3b 01 	call	0x276	; 0x276 <Main_Task>
+
+Disassembly of section .text.BLUE_LED_Initializ:
+
+000002b6 <BLUE_LED_Initializ>:
+ * input: nothing
+ * return: Error State
+ */
+ERROR_STATE BLUE_LED_Initializ(void){
+	ERROR_STATE state_error = SUCCESS;
+	DIO_SetPin_Direction(BLUE_LED_PORT,BLUE_LED_PIN,BLUE_LED_OUTPUT);
+ 2b6:	41 e0       	ldi	r20, 0x01	; 1
+ 2b8:	65 e0       	ldi	r22, 0x05	; 5
+ 2ba:	80 e0       	ldi	r24, 0x00	; 0
+ 2bc:	0e 94 36 00 	call	0x6c	; 0x6c <__data_load_end>
+	return state_error;
+}
+ 2c0:	81 e0       	ldi	r24, 0x01	; 1
+ 2c2:	08 95       	ret
+
+Disassembly of section .text.main:
+
+000002c4 <main>:
+#include "main.h"
+
+
+int main() 
+{
+	APP_Init();
+ 2c4:	0e 94 2c 01 	call	0x258	; 0x258 <APP_Init>
+	while(1)
+	{
+		APP_main();
+ 2c8:	0e 94 69 01 	call	0x2d2	; 0x2d2 <APP_main>
+ 2cc:	fd cf       	rjmp	.-6      	; 0x2c8 <main+0x4>
+
+Disassembly of section .text.DIO_SetPin_Direction:
+
+0000006c <DIO_SetPin_Direction>:
+ * return: Error State
+ */
+ERROR_STATE DIO_SetPin_Direction(DIO_Port port, DIO_Pin pin, DIO_State state)
+{
+	ERROR_STATE state_error = SUCCESS;
+	switch (state)
+  6c:	44 23       	and	r20, r20
+  6e:	19 f0       	breq	.+6      	; 0x76 <DIO_SetPin_Direction+0xa>
+  70:	41 30       	cpi	r20, 0x01	; 1
+  72:	e9 f1       	breq	.+122    	; 0xee <DIO_SetPin_Direction+0x82>
+  74:	74 c0       	rjmp	.+232    	; 0x15e <DIO_SetPin_Direction+0xf2>
+	{
+		case DIO_INPUT:
+		switch(port)
+  76:	81 30       	cpi	r24, 0x01	; 1
+  78:	99 f0       	breq	.+38     	; 0xa0 <DIO_SetPin_Direction+0x34>
+  7a:	28 f0       	brcs	.+10     	; 0x86 <DIO_SetPin_Direction+0x1a>
+  7c:	82 30       	cpi	r24, 0x02	; 2
+  7e:	e9 f0       	breq	.+58     	; 0xba <DIO_SetPin_Direction+0x4e>
+  80:	83 30       	cpi	r24, 0x03	; 3
+  82:	41 f1       	breq	.+80     	; 0xd4 <DIO_SetPin_Direction+0x68>
+  84:	6e c0       	rjmp	.+220    	; 0x162 <DIO_SetPin_Direction+0xf6>
+		{
+			case DIO_PORTA:
+			CLR_BIT(DDRA, pin);
+  86:	2a b3       	in	r18, 0x1a	; 26
+  88:	81 e0       	ldi	r24, 0x01	; 1
+  8a:	90 e0       	ldi	r25, 0x00	; 0
+  8c:	02 c0       	rjmp	.+4      	; 0x92 <DIO_SetPin_Direction+0x26>
+  8e:	88 0f       	add	r24, r24
+  90:	99 1f       	adc	r25, r25
+  92:	6a 95       	dec	r22
+  94:	e2 f7       	brpl	.-8      	; 0x8e <DIO_SetPin_Direction+0x22>
+  96:	80 95       	com	r24
+  98:	82 23       	and	r24, r18
+  9a:	8a bb       	out	0x1a, r24	; 26
+ * input: port & pin & direction
+ * return: Error State
+ */
+ERROR_STATE DIO_SetPin_Direction(DIO_Port port, DIO_Pin pin, DIO_State state)
+{
+	ERROR_STATE state_error = SUCCESS;
+  9c:	81 e0       	ldi	r24, 0x01	; 1
+		case DIO_INPUT:
+		switch(port)
+		{
+			case DIO_PORTA:
+			CLR_BIT(DDRA, pin);
+			break;
+  9e:	08 95       	ret
+			case DIO_PORTB:
+			CLR_BIT(DDRB, pin);
+  a0:	27 b3       	in	r18, 0x17	; 23
+  a2:	81 e0       	ldi	r24, 0x01	; 1
+  a4:	90 e0       	ldi	r25, 0x00	; 0
+  a6:	02 c0       	rjmp	.+4      	; 0xac <DIO_SetPin_Direction+0x40>
+  a8:	88 0f       	add	r24, r24
+  aa:	99 1f       	adc	r25, r25
+  ac:	6a 95       	dec	r22
+  ae:	e2 f7       	brpl	.-8      	; 0xa8 <DIO_SetPin_Direction+0x3c>
+  b0:	80 95       	com	r24
+  b2:	82 23       	and	r24, r18
+  b4:	87 bb       	out	0x17, r24	; 23
+ * input: port & pin & direction
+ * return: Error State
+ */
+ERROR_STATE DIO_SetPin_Direction(DIO_Port port, DIO_Pin pin, DIO_State state)
+{
+	ERROR_STATE state_error = SUCCESS;
+  b6:	81 e0       	ldi	r24, 0x01	; 1
+			case DIO_PORTA:
+			CLR_BIT(DDRA, pin);
+			break;
+			case DIO_PORTB:
+			CLR_BIT(DDRB, pin);
+			break;
+  b8:	08 95       	ret
+			case DIO_PORTC:
+			CLR_BIT(DDRC, pin);
+  ba:	24 b3       	in	r18, 0x14	; 20
+  bc:	81 e0       	ldi	r24, 0x01	; 1
+  be:	90 e0       	ldi	r25, 0x00	; 0
+  c0:	02 c0       	rjmp	.+4      	; 0xc6 <DIO_SetPin_Direction+0x5a>
+  c2:	88 0f       	add	r24, r24
+  c4:	99 1f       	adc	r25, r25
+  c6:	6a 95       	dec	r22
+  c8:	e2 f7       	brpl	.-8      	; 0xc2 <DIO_SetPin_Direction+0x56>
+  ca:	80 95       	com	r24
+  cc:	82 23       	and	r24, r18
+  ce:	84 bb       	out	0x14, r24	; 20
+ * input: port & pin & direction
+ * return: Error State
+ */
+ERROR_STATE DIO_SetPin_Direction(DIO_Port port, DIO_Pin pin, DIO_State state)
+{
+	ERROR_STATE state_error = SUCCESS;
+  d0:	81 e0       	ldi	r24, 0x01	; 1
+			case DIO_PORTB:
+			CLR_BIT(DDRB, pin);
+			break;
+			case DIO_PORTC:
+			CLR_BIT(DDRC, pin);
+			break;
+  d2:	08 95       	ret
+			case DIO_PORTD:
+			CLR_BIT(DDRD, pin);
+  d4:	21 b3       	in	r18, 0x11	; 17
+  d6:	81 e0       	ldi	r24, 0x01	; 1
+  d8:	90 e0       	ldi	r25, 0x00	; 0
+  da:	02 c0       	rjmp	.+4      	; 0xe0 <DIO_SetPin_Direction+0x74>
+  dc:	88 0f       	add	r24, r24
+  de:	99 1f       	adc	r25, r25
+  e0:	6a 95       	dec	r22
+  e2:	e2 f7       	brpl	.-8      	; 0xdc <DIO_SetPin_Direction+0x70>
+  e4:	80 95       	com	r24
+  e6:	82 23       	and	r24, r18
+  e8:	81 bb       	out	0x11, r24	; 17
+ * input: port & pin & direction
+ * return: Error State
+ */
+ERROR_STATE DIO_SetPin_Direction(DIO_Port port, DIO_Pin pin, DIO_State state)
+{
+	ERROR_STATE state_error = SUCCESS;
+  ea:	81 e0       	ldi	r24, 0x01	; 1
+			case DIO_PORTC:
+			CLR_BIT(DDRC, pin);
+			break;
+			case DIO_PORTD:
+			CLR_BIT(DDRD, pin);
+			break;
+  ec:	08 95       	ret
+			state_error = FAIL;
+			break;
+		}
+		break;
+		case DIO_OUTPUT:
+		switch(port)
+  ee:	81 30       	cpi	r24, 0x01	; 1
+  f0:	91 f0       	breq	.+36     	; 0x116 <DIO_SetPin_Direction+0xaa>
+  f2:	28 f0       	brcs	.+10     	; 0xfe <DIO_SetPin_Direction+0x92>
+  f4:	82 30       	cpi	r24, 0x02	; 2
+  f6:	d9 f0       	breq	.+54     	; 0x12e <DIO_SetPin_Direction+0xc2>
+  f8:	83 30       	cpi	r24, 0x03	; 3
+  fa:	29 f1       	breq	.+74     	; 0x146 <DIO_SetPin_Direction+0xda>
+  fc:	34 c0       	rjmp	.+104    	; 0x166 <DIO_SetPin_Direction+0xfa>
+		{
+			case DIO_PORTA:
+			SET_BIT(DDRA, pin);
+  fe:	2a b3       	in	r18, 0x1a	; 26
+ 100:	81 e0       	ldi	r24, 0x01	; 1
+ 102:	90 e0       	ldi	r25, 0x00	; 0
+ 104:	02 c0       	rjmp	.+4      	; 0x10a <DIO_SetPin_Direction+0x9e>
+ 106:	88 0f       	add	r24, r24
+ 108:	99 1f       	adc	r25, r25
+ 10a:	6a 95       	dec	r22
+ 10c:	e2 f7       	brpl	.-8      	; 0x106 <DIO_SetPin_Direction+0x9a>
+ 10e:	82 2b       	or	r24, r18
+ 110:	8a bb       	out	0x1a, r24	; 26
+ * input: port & pin & direction
+ * return: Error State
+ */
+ERROR_STATE DIO_SetPin_Direction(DIO_Port port, DIO_Pin pin, DIO_State state)
+{
+	ERROR_STATE state_error = SUCCESS;
+ 112:	81 e0       	ldi	r24, 0x01	; 1
+		case DIO_OUTPUT:
+		switch(port)
+		{
+			case DIO_PORTA:
+			SET_BIT(DDRA, pin);
+			break;
+ 114:	08 95       	ret
+			case DIO_PORTB:
+			SET_BIT(DDRB, pin);
+ 116:	27 b3       	in	r18, 0x17	; 23
+ 118:	81 e0       	ldi	r24, 0x01	; 1
+ 11a:	90 e0       	ldi	r25, 0x00	; 0
+ 11c:	02 c0       	rjmp	.+4      	; 0x122 <DIO_SetPin_Direction+0xb6>
+ 11e:	88 0f       	add	r24, r24
+ 120:	99 1f       	adc	r25, r25
+ 122:	6a 95       	dec	r22
+ 124:	e2 f7       	brpl	.-8      	; 0x11e <DIO_SetPin_Direction+0xb2>
+ 126:	82 2b       	or	r24, r18
+ 128:	87 bb       	out	0x17, r24	; 23
+ * input: port & pin & direction
+ * return: Error State
+ */
+ERROR_STATE DIO_SetPin_Direction(DIO_Port port, DIO_Pin pin, DIO_State state)
+{
+	ERROR_STATE state_error = SUCCESS;
+ 12a:	81 e0       	ldi	r24, 0x01	; 1
+			case DIO_PORTA:
+			SET_BIT(DDRA, pin);
+			break;
+			case DIO_PORTB:
+			SET_BIT(DDRB, pin);
+			break;
+ 12c:	08 95       	ret
+			case DIO_PORTC:
+			SET_BIT(DDRC, pin);
+ 12e:	24 b3       	in	r18, 0x14	; 20
+ 130:	81 e0       	ldi	r24, 0x01	; 1
+ 132:	90 e0       	ldi	r25, 0x00	; 0
+ 134:	02 c0       	rjmp	.+4      	; 0x13a <DIO_SetPin_Direction+0xce>
+ 136:	88 0f       	add	r24, r24
+ 138:	99 1f       	adc	r25, r25
+ 13a:	6a 95       	dec	r22
+ 13c:	e2 f7       	brpl	.-8      	; 0x136 <DIO_SetPin_Direction+0xca>
+ 13e:	82 2b       	or	r24, r18
+ 140:	84 bb       	out	0x14, r24	; 20
+ * input: port & pin & direction
+ * return: Error State
+ */
+ERROR_STATE DIO_SetPin_Direction(DIO_Port port, DIO_Pin pin, DIO_State state)
+{
+	ERROR_STATE state_error = SUCCESS;
+ 142:	81 e0       	ldi	r24, 0x01	; 1
+			case DIO_PORTB:
+			SET_BIT(DDRB, pin);
+			break;
+			case DIO_PORTC:
+			SET_BIT(DDRC, pin);
+			break;
+ 144:	08 95       	ret
+			case DIO_PORTD:
+			SET_BIT(DDRD, pin);
+ 146:	21 b3       	in	r18, 0x11	; 17
+ 148:	81 e0       	ldi	r24, 0x01	; 1
+ 14a:	90 e0       	ldi	r25, 0x00	; 0
+ 14c:	02 c0       	rjmp	.+4      	; 0x152 <DIO_SetPin_Direction+0xe6>
+ 14e:	88 0f       	add	r24, r24
+ 150:	99 1f       	adc	r25, r25
+ 152:	6a 95       	dec	r22
+ 154:	e2 f7       	brpl	.-8      	; 0x14e <DIO_SetPin_Direction+0xe2>
+ 156:	82 2b       	or	r24, r18
+ 158:	81 bb       	out	0x11, r24	; 17
+ * input: port & pin & direction
+ * return: Error State
+ */
+ERROR_STATE DIO_SetPin_Direction(DIO_Port port, DIO_Pin pin, DIO_State state)
+{
+	ERROR_STATE state_error = SUCCESS;
+ 15a:	81 e0       	ldi	r24, 0x01	; 1
+			case DIO_PORTC:
+			SET_BIT(DDRC, pin);
+			break;
+			case DIO_PORTD:
+			SET_BIT(DDRD, pin);
+			break;
+ 15c:	08 95       	ret
+ * input: port & pin & direction
+ * return: Error State
+ */
+ERROR_STATE DIO_SetPin_Direction(DIO_Port port, DIO_Pin pin, DIO_State state)
+{
+	ERROR_STATE state_error = SUCCESS;
+ 15e:	81 e0       	ldi	r24, 0x01	; 1
+ 160:	08 95       	ret
+			break;
+			case DIO_PORTD:
+			CLR_BIT(DDRD, pin);
+			break;
+			default:
+			state_error = FAIL;
+ 162:	80 e0       	ldi	r24, 0x00	; 0
+ 164:	08 95       	ret
+			break;
+			case DIO_PORTD:
+			SET_BIT(DDRD, pin);
+			break;
+			default:
+			state_error = FAIL;
+ 166:	80 e0       	ldi	r24, 0x00	; 0
+			break;
+		}
+		break;
+	}
+	return state_error;
+}
+ 168:	08 95       	ret
+
+Disassembly of section .text.timer0_overflow_init_interrupt:
+
+000001da <timer0_overflow_init_interrupt>:
+
+
+void timer0_overflow_init_interrupt(void)
+{
+	/* select Over mode*/
+	CLR_BIT(TCCR0,WGM00);
+ 1da:	83 b7       	in	r24, 0x33	; 51
+ 1dc:	8f 7b       	andi	r24, 0xBF	; 191
+ 1de:	83 bf       	out	0x33, r24	; 51
+	CLR_BIT(TCCR0,WGM01);
+ 1e0:	83 b7       	in	r24, 0x33	; 51
+ 1e2:	87 7f       	andi	r24, 0xF7	; 247
+ 1e4:	83 bf       	out	0x33, r24	; 51
+	/*load a value in TCNT0 */
+	TCNT0=0;
+ 1e6:	12 be       	out	0x32, r1	; 50
+	/* select timer clock prescaller 256  */
+	CLR_BIT(TCCR0,CS00);
+ 1e8:	83 b7       	in	r24, 0x33	; 51
+ 1ea:	8e 7f       	andi	r24, 0xFE	; 254
+ 1ec:	83 bf       	out	0x33, r24	; 51
+	SET_BIT(TCCR0,CS02);
+ 1ee:	83 b7       	in	r24, 0x33	; 51
+ 1f0:	84 60       	ori	r24, 0x04	; 4
+ 1f2:	83 bf       	out	0x33, r24	; 51
+	CLR_BIT(TCCR0,CS01);
+ 1f4:	83 b7       	in	r24, 0x33	; 51
+ 1f6:	8d 7f       	andi	r24, 0xFD	; 253
+ 1f8:	83 bf       	out	0x33, r24	; 51
+	/* enable interrupt*/
+		SET_BIT(TIMSK,TOIE0);
+ 1fa:	89 b7       	in	r24, 0x39	; 57
+ 1fc:	81 60       	ori	r24, 0x01	; 1
+ 1fe:	89 bf       	out	0x39, r24	; 57
+ SET_BIT(SREG,7);
+ 200:	8f b7       	in	r24, 0x3f	; 63
+ 202:	80 68       	ori	r24, 0x80	; 128
+ 204:	8f bf       	out	0x3f, r24	; 63
+ 206:	08 95       	ret
+
+Disassembly of section .text.timer_CTC_init_interrupt:
+
+0000016a <timer_CTC_init_interrupt>:
+ * return: Error State
+ */
+void timer0_deinit(){
+	
+	TCCR0=0;
+	Set_Global_INT(OFF);
+ 16a:	87 b3       	in	r24, 0x17	; 23
+ 16c:	88 60       	ori	r24, 0x08	; 8
+ 16e:	87 bb       	out	0x17, r24	; 23
+ 170:	83 b7       	in	r24, 0x33	; 51
+ 172:	88 60       	ori	r24, 0x08	; 8
+ 174:	83 bf       	out	0x33, r24	; 51
+ 176:	80 e8       	ldi	r24, 0x80	; 128
+ 178:	8c bf       	out	0x3c, r24	; 60
+ 17a:	83 b7       	in	r24, 0x33	; 51
+ 17c:	80 61       	ori	r24, 0x10	; 16
+ 17e:	83 bf       	out	0x33, r24	; 51
+ 180:	83 b7       	in	r24, 0x33	; 51
+ 182:	8f 7d       	andi	r24, 0xDF	; 223
+ 184:	83 bf       	out	0x33, r24	; 51
+ 186:	83 b7       	in	r24, 0x33	; 51
+ 188:	8e 7f       	andi	r24, 0xFE	; 254
+ 18a:	83 bf       	out	0x33, r24	; 51
+ 18c:	83 b7       	in	r24, 0x33	; 51
+ 18e:	84 60       	ori	r24, 0x04	; 4
+ 190:	83 bf       	out	0x33, r24	; 51
+ 192:	83 b7       	in	r24, 0x33	; 51
+ 194:	8d 7f       	andi	r24, 0xFD	; 253
+ 196:	83 bf       	out	0x33, r24	; 51
+ 198:	89 b7       	in	r24, 0x39	; 57
+ 19a:	82 60       	ori	r24, 0x02	; 2
+ 19c:	89 bf       	out	0x39, r24	; 57
+ 19e:	8f b7       	in	r24, 0x3f	; 63
+ 1a0:	80 68       	ori	r24, 0x80	; 128
+ 1a2:	8f bf       	out	0x3f, r24	; 63
+ 1a4:	08 95       	ret
+
+Disassembly of section .text.timer_wave_fastPWM:
+
+000001a6 <timer_wave_fastPWM>:
+ 1a6:	83 b7       	in	r24, 0x33	; 51
+ 1a8:	80 64       	ori	r24, 0x40	; 64
+ 1aa:	83 bf       	out	0x33, r24	; 51
+ 1ac:	83 b7       	in	r24, 0x33	; 51
+ 1ae:	88 60       	ori	r24, 0x08	; 8
+ 1b0:	83 bf       	out	0x33, r24	; 51
+ 1b2:	83 b7       	in	r24, 0x33	; 51
+ 1b4:	81 60       	ori	r24, 0x01	; 1
+ 1b6:	83 bf       	out	0x33, r24	; 51
+ 1b8:	83 b7       	in	r24, 0x33	; 51
+ 1ba:	82 60       	ori	r24, 0x02	; 2
+ 1bc:	83 bf       	out	0x33, r24	; 51
+ 1be:	83 b7       	in	r24, 0x33	; 51
+ 1c0:	8b 7f       	andi	r24, 0xFB	; 251
+ 1c2:	83 bf       	out	0x33, r24	; 51
+ 1c4:	87 b3       	in	r24, 0x17	; 23
+ 1c6:	88 60       	ori	r24, 0x08	; 8
+ 1c8:	87 bb       	out	0x17, r24	; 23
+ 1ca:	83 b7       	in	r24, 0x33	; 51
+ 1cc:	8f 7e       	andi	r24, 0xEF	; 239
+ 1ce:	83 bf       	out	0x33, r24	; 51
+ 1d0:	83 b7       	in	r24, 0x33	; 51
+ 1d2:	80 62       	ori	r24, 0x20	; 32
+ 1d4:	83 bf       	out	0x33, r24	; 51
+ 1d6:	1c be       	out	0x3c, r1	; 60
+ 1d8:	08 95       	ret
+
+Disassembly of section .text.libgcc.div:
+
+00000208 <__divmodhi4>:
+ 208:	97 fb       	bst	r25, 7
+ 20a:	07 2e       	mov	r0, r23
+ 20c:	16 f4       	brtc	.+4      	; 0x212 <__divmodhi4+0xa>
+ 20e:	00 94       	com	r0
+ 210:	07 d0       	rcall	.+14     	; 0x220 <__divmodhi4_neg1>
+ 212:	77 fd       	sbrc	r23, 7
+ 214:	09 d0       	rcall	.+18     	; 0x228 <__divmodhi4_neg2>
+ 216:	0e 94 18 01 	call	0x230	; 0x230 <__udivmodhi4>
+ 21a:	07 fc       	sbrc	r0, 7
+ 21c:	05 d0       	rcall	.+10     	; 0x228 <__divmodhi4_neg2>
+ 21e:	3e f4       	brtc	.+14     	; 0x22e <__divmodhi4_exit>
+
+00000220 <__divmodhi4_neg1>:
+ 220:	90 95       	com	r25
+ 222:	81 95       	neg	r24
+ 224:	9f 4f       	sbci	r25, 0xFF	; 255
+ 226:	08 95       	ret
+
+00000228 <__divmodhi4_neg2>:
+ 228:	70 95       	com	r23
+ 22a:	61 95       	neg	r22
+ 22c:	7f 4f       	sbci	r23, 0xFF	; 255
+
+0000022e <__divmodhi4_exit>:
+ 22e:	08 95       	ret
+
+Disassembly of section .text.libgcc.div:
+
+00000230 <__udivmodhi4>:
+ 230:	aa 1b       	sub	r26, r26
+ 232:	bb 1b       	sub	r27, r27
+ 234:	51 e1       	ldi	r21, 0x11	; 17
+ 236:	07 c0       	rjmp	.+14     	; 0x246 <__udivmodhi4_ep>
+
+00000238 <__udivmodhi4_loop>:
+ 238:	aa 1f       	adc	r26, r26
+ 23a:	bb 1f       	adc	r27, r27
+ 23c:	a6 17       	cp	r26, r22
+ 23e:	b7 07       	cpc	r27, r23
+ 240:	10 f0       	brcs	.+4      	; 0x246 <__udivmodhi4_ep>
+ 242:	a6 1b       	sub	r26, r22
+ 244:	b7 0b       	sbc	r27, r23
+
+00000246 <__udivmodhi4_ep>:
+ 246:	88 1f       	adc	r24, r24
+ 248:	99 1f       	adc	r25, r25
+ 24a:	5a 95       	dec	r21
+ 24c:	a9 f7       	brne	.-22     	; 0x238 <__udivmodhi4_loop>
+ 24e:	80 95       	com	r24
+ 250:	90 95       	com	r25
+ 252:	bc 01       	movw	r22, r24
+ 254:	cd 01       	movw	r24, r26
+ 256:	08 95       	ret
+
+Disassembly of section .text.__dummy_fini:
+
+000002da <_fini>:
+ 2da:	08 95       	ret
+
+Disassembly of section .text.__dummy_funcs_on_exit:
+
+000002dc <__funcs_on_exit>:
+ 2dc:	08 95       	ret
+
+Disassembly of section .text.__dummy_simulator_exit:
+
+000002de <__simulator_exit>:
+ 2de:	08 95       	ret
+
+Disassembly of section .text.exit:
+
+0000028e <exit>:
+ 28e:	ec 01       	movw	r28, r24
+ 290:	0e 94 6e 01 	call	0x2dc	; 0x2dc <__funcs_on_exit>
+ 294:	0e 94 6d 01 	call	0x2da	; 0x2da <_fini>
+ 298:	ce 01       	movw	r24, r28
+ 29a:	0e 94 6f 01 	call	0x2de	; 0x2de <__simulator_exit>
+ 29e:	ce 01       	movw	r24, r28
+ 2a0:	0e 94 6b 01 	call	0x2d6	; 0x2d6 <_Exit>
+
+Disassembly of section .text._Exit:
+
+000002d6 <_Exit>:
+ 2d6:	0e 94 34 00 	call	0x68	; 0x68 <_exit>
